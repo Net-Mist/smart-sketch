@@ -191,7 +191,7 @@ if __name__ == "__main__":
         default=False,
         help="Enable debugging mode."
     )
-    tornado.options.define('port', default=80, help='Port to listen on.')
+    tornado.options.define('port', default=9000, help='Port to listen on.')
     host = "0.0.0.0"
     if sys.platform == "win32":
         host = "127.0.0.1"

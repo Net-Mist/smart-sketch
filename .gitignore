@@ -47,5 +47,9 @@ HackSC/
 env/
 *.png
 
+backend/checkpoints/**
+!backend/checkpoints/empty
+.idea
+
 
 
