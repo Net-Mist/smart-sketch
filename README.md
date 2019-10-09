@@ -1,24 +1,71 @@
-# SmartSketch
+# GAN-Sketcher
 
-## Supercharge your creativity with state of the art image synthesis
+This is a fork from https://github.com/noyoshi/smart-sketch
 
-![promo.png](promo.png)
+Which is also a fork/based on https://github.com/NVlabs/SPADE
 
-## Credits
+The web-server code has been reworked and cleaned up and the frontend is improved and reimplemented in Vue.js.
 
-- https://nvlabs.github.io/SPADE/
-- https://arxiv.org/abs/1903.07291
-- https://github.com/nvlabs/spade/
-- Special thanks to @AndroidKitKat for helping us host this!
+## Getting Started
 
-## Set Up
+The file structure is mainly inherited but already cleaned up to a certain extend.
+The frontend is a vue 
 
-- You'll need to install the pretrained generator model for the COCO dataset into `checkpoints/coco_pretrained/`. Instructions for this can be found on the `nvlabs/spade` repo.
+### Prerequisites
 
-- Make sure you need to install all the Python requirements using `pip3 install -r requirements.txt`. Once you do this, you should be able to run the server using `python3 server.py`. It will run it on `0.0.0.0` on port 80. Unfortunately these are hardcoded into the server and right now you cannot pass CLI arguments to the server to specify the port and host, as the PyTorch stuff also reads from the command line (will fix this soon).
+You need to install node.js >= 10.x with npm and Python 3.6+.
 
-### TODOS
+### Installation
 
-- [ ] Change how we run the model, make it easier to use (don't use their options object)
-- [ ] Make a seperate frontend server and a backend server (for scaling)
-- [ ] Try to containerize at least the bacckend components
+#### Server
+
+```shell script
+git clone https://github.com/KIDICA/smart-sketch.git
+```
+
+Install required modules and components.
+
+```shell script
+python3.7 -m pip install venv
+python3.7 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
+
+Start the server.
+
+```shell script
+python server.py
+```
+
+#### Frontend
+
+The frontend is a Vue.js application which is entirely separated from the server.
+
+##### Development
+
+```shell script
+cd app
+npm install 
+npm run serve
+```
+
+Will provide you will a link to a live recompile entry point.
+
+###### Deployment
+
+This will just deploy the Vue application to app/dist which is statically served by the Python server.
+
+```shell script
+cd app
+npm run build
+```
+
+###### Commands
+
+## Commands
+
+Command                     | Description
+----------------------------|---------------------------------------------------------------------------------------
+npm run serve               | Real-time compiled dev app for Vue app.
+npm run build               | Build the frontend to app/dist
