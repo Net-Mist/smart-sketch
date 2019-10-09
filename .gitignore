@@ -4,6 +4,8 @@ results/**
 img/*.png
 *.png
 checkpoints/
-/venv/
+venv
 .vscode
 .idea
+__pycache__
+*.pyc
