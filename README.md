@@ -1,7 +1,8 @@
 # GAN-Sketcher
 
-This is a fork from https://github.com/noyoshi/smart-sketch
+This project is based on nvidia SPADE which is a GAN generating photo realistic images from drawings.
 
+This is a fork from https://github.com/noyoshi/smart-sketch
 Which is also a fork/based on https://github.com/NVlabs/SPADE
 
 The web-server code has been reworked and cleaned up and the frontend is improved and reimplemented in Vue.js.
@@ -22,7 +23,7 @@ You need to install node.js >= 10.x with npm and Python 3.6+.
 #### Server
 
 ```shell script
-git clone https://github.com/KIDICA/smart-sketch.git
+git clone https://github.com/KIDICA/gan-sketcher.git
 ```
 
 Install required modules and components.
@@ -37,7 +38,7 @@ pip install -r requirements.txt
 Start the server.
 
 ```shell script
-python server.py
+python main.py
 ```
 
 #### Frontend

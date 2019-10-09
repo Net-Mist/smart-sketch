@@ -1,0 +1,12 @@
+SPADE/**
+dataset/*
+results/**
+img/*.png
+checkpoints/
+venv
+.vscode
+.idea
+__pycache__
+output
+*.pyc
+backend
