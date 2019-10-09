@@ -48,7 +48,7 @@ The frontend is a Vue.js application which is entirely separated from the server
 ##### Development
 
 ```shell script
-cd app
+cd client
 npm install 
 npm run serve
 ```
@@ -60,7 +60,7 @@ Will provide you will a link to a live recompile entry point.
 This will just deploy the Vue application to app/dist which is statically served by the Python server.
 
 ```shell script
-cd app
+cd client
 npm run build
 ```
 
