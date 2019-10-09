@@ -6,6 +6,8 @@ Which is also a fork/based on https://github.com/NVlabs/SPADE
 
 The web-server code has been reworked and cleaned up and the frontend is improved and reimplemented in Vue.js.
 
+![](https://raw.githubusercontent.com/KIDICA/gan-sketcher/master/doc/screen0.png)
+
 ## Getting Started
 
 The file structure is mainly inherited but already cleaned up to a certain extend.
