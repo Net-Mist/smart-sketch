@@ -16,11 +16,23 @@ The frontend is a vue
 
 ### Prerequisites
 
-You need to install node.js >= 10.x with npm and Python 3.6+.
+You need to install node.js >= 10.x with npm and Python 3.6+. 
 
 ### Installation
 
+#### Python
+
+
+
 #### Server
+
+We recommend that you install Python 3.7 with the virtual-environment package.
+
+```shell script
+sudo apt install python3.7 python3.7-venv -y
+```
+
+Clone the repo
 
 ```shell script
 git clone https://github.com/KIDICA/gan-sketcher.git
@@ -29,7 +41,7 @@ git clone https://github.com/KIDICA/gan-sketcher.git
 Install required modules and components.
 
 ```shell script
-python3.7 -m pip install venv
+cd server
 python3.7 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
@@ -40,6 +52,8 @@ Start the server.
 ```shell script
 python main.py
 ```
+
+Now you can open in your browser: http://localhost:9000
 
 #### Frontend
 
