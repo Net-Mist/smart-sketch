@@ -35,7 +35,7 @@ jQuery(document).ready(function($) {
     { color: "#3c3b4b", title: "montagne" },
     { color: "#987e6a", title: "route" },
     { color: "#759edf", title: "ciel" },
-    { color: "#352613", title: "arbre" },
+    { color: "#352613", title: "forêt" },
     { color: "#636363", title: "pavé" },
     { color: "#e670b6", title: "fleur" },
     { color: "#c1c3c9", title: "brouillard" },
