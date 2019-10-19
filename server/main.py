@@ -21,7 +21,7 @@ LABEL_FOLDER = path.join(LOCATION, "dataset/val_label")
 
 verbose = ((sys.argv[1] if 1 < len(sys.argv) else "") == "verbose")
 
-APP_FOLDER = path.join(LOCATION, '..', 'client', 'dist')
+APP_FOLDER = path.join(LOCATION, 'dist')
 STATIC_FOLDER = path.join(LOCATION, 'static')
 EXPORT_LOCATION = "/tmp"
 OUTPUT_FOLDER = path.join(LOCATION, "output")
@@ -145,19 +145,9 @@ class MainApplication(tornado.web.Application):
 
 if __name__ == "__main__":
     check_for_dataset_folder()
-
-    tornado.options.define(
-        "debug",
-        default=False,
-        help="Enable debugging mode."
-    )
-
-    tornado.options.define('port', default=9000, help='Port to listen on.')
+    tornado.options.define( "debug", default=False, help="Enable debugging mode.")
+    tornado.options.define('port', default=80, help='Port to listen on.')
     host = "0.0.0.0"
-
-    if sys.platform == "win32":
-        host = "127.0.0.1"
-
     tornado.options.define('address', default=host, help='Url')
     tornado.options.parse_command_line()
     options = tornado.options.options.as_dict()

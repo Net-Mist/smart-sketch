@@ -11,3 +11,4 @@ output/**
 !output/empty
 *.pyc
 backend
+dist
