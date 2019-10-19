@@ -209,6 +209,8 @@ export default {
     },
     leave() {
       this.withinCanvas = true;
+      this.mouseDown = false;
+      this.$emit("mouseup");
     },
     /** @returns {Uint8ClampedArray} */
     getData() {
