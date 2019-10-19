@@ -1,30 +1,10 @@
 <template>
   <div id="app">
-    <nav class="navbar navbar-expand-lg navbar-dark static-top bg-primary">
+    <!-- <nav class="navbar navbar-expand-lg navbar-dark static-top bg-primary">
       <div class="container-fluid">
-        <a class="navbar-brand rubik branding" href="#">GAN-Sketcher</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarResponsive"
-          aria-controls="navbarResponsive"
-          aria-expanded="false"
-          aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <router-link to="/">Home</router-link>
-            </li>
-            <li class="nav-item">
-              <router-link to="/about">About</router-link>
-            </li>
-          </ul>
-        </div>
+        <div class="navbar-brand rubik branding">GAN-Sketcher</div>
       </div>
-    </nav>
+    </nav> -->
 
     <div class="main container-fluid p-2">
       <router-view/>
@@ -33,16 +13,25 @@
 </template>
 
 <style>
+.bg-primary {
+  background-color: #2c3e50 !important;
+}
+
+.border-primary {
+    border-color: #2c3e50 !important;
+}
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #28369c;
 }
 
 #nav {
   padding: 30px;
+  color: #28369c;
 }
 
 #nav a {

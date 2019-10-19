@@ -1,18 +1,22 @@
 <template>
   <div>
-    <canvas class="shadow-sm" ref="c" style="border:1px solid lightgray"
-            v-bind:width="size.width"
-            v-bind:height="size.height"
-            v-on:mouseenter="enter"
-            v-on:mousedown="down"
-            v-on:mouseup="up"
-            v-on:mousemove="move"
-            v-on:mouseleave="leave">
-    </canvas>
+    <canvas
+      class="shadow-sm"
+      ref="c"
+      style="border:1px solid lightgray"
+      v-bind:width="size.width"
+      v-bind:height="size.height"
+      v-on:mouseenter="enter"
+      v-on:mousedown="down"
+      v-on:mouseup="up"
+      v-on:mousemove="move"
+      v-on:mouseleave="leave"
+    ></canvas>
     <span
       ref="pointer"
       v-show="pointer.show"
-      style="position: absolute; z-index: 1000; background: black; opacity: 0.1; width:50px; height:50px; border-radius: 100px;"></span>
+      style="position: absolute; z-index: 1000; background: black; opacity: 0.1; width:50px; height:50px; border-radius: 100px;"
+    ></span>
   </div>
 </template>
 
@@ -20,7 +24,7 @@
 export default {
   props: {
     width: Number,
-    height: Number,
+    height: Number
   },
   data() {
     return {
@@ -39,15 +43,15 @@ export default {
       pointer: {
         show: false,
         x: 0,
-        y: 0,
+        y: 0
       },
       size: {
         width: this.width || 400,
-        height: this.height || 400,
+        height: this.height || 400
       },
       // draw/fill
-      mode: "draw",
-    }
+      mode: "draw"
+    };
   },
   methods: {
     clear() {
@@ -85,13 +89,18 @@ export default {
 
       return {
         x: parseInt(e.clientX - rect.left),
-        y: parseInt(e.clientY - rect.top),
+        y: parseInt(e.clientY - rect.top)
       };
     },
     getPixel(x, y) {
       const offset = y * this.w * 4 + x * 4;
       const data = this.getData().data;
-      return [data[offset], data[offset + 1], data[offset + 2], data[offset + 3]];
+      return [
+        data[offset],
+        data[offset + 1],
+        data[offset + 2],
+        data[offset + 3]
+      ];
     },
     hexToRGB(hex) {
       let c;
@@ -101,7 +110,7 @@ export default {
           c = [c[0], c[0], c[1], c[1], c[2], c[2]];
         }
         c = "0x" + c.join("");
-        return [(c >> 16) & 255, (c >> 8) & 255, c & 255]
+        return [(c >> 16) & 255, (c >> 8) & 255, c & 255];
       }
       throw new Error("Bad Hex");
     },
@@ -125,8 +134,14 @@ export default {
         const offset = y * this.w * 4 + x * 4;
         const colorXY = [data[offset], data[offset + 1], data[offset + 2]];
 
-        const hasAlreadyFillColor = colorXY[0] === penColor[0] && colorXY[1] === penColor[1] && colorXY[2] === penColor[2];
-        const hasStartColor = colorXY[0] === startColor[0] && colorXY[1] === startColor[1] && colorXY[2] === startColor[2];
+        const hasAlreadyFillColor =
+          colorXY[0] === penColor[0] &&
+          colorXY[1] === penColor[1] &&
+          colorXY[2] === penColor[2];
+        const hasStartColor =
+          colorXY[0] === startColor[0] &&
+          colorXY[1] === startColor[1] &&
+          colorXY[2] === startColor[2];
 
         if (hasStartColor && !hasAlreadyFillColor) {
           data[offset] = penColor[0];
@@ -159,7 +174,6 @@ export default {
 
           stack.push(x + 1);
           stack.push(y - 1);
-
         }
       }
 
@@ -170,7 +184,12 @@ export default {
     fillMode(event) {
       const c = this.cart_coord(event);
       console.log(c.x, c.y, this.w * 4 * c.y + 4 * c.x);
-      this.floodFill(c.x, c.y, this.hexToRGB(this.pen), this.getPixel(c.x, c.y));
+      this.floodFill(
+        c.x,
+        c.y,
+        this.hexToRGB(this.pen),
+        this.getPixel(c.x, c.y)
+      );
     },
     // Dynamically dispatched.
     drawMode(event) {
@@ -197,7 +216,11 @@ export default {
       return this[this.mode + "Mode"](...args);
     },
     move(event) {
-      if (this.mode === "draw" && this.withinCanvas === false && this.mouseDown) {
+      if (
+        this.mode === "draw" &&
+        this.withinCanvas === false &&
+        this.mouseDown
+      ) {
         this.modeFn(event);
         // Pointer
         //this.$refs.pointer.style.left = c.x + 90 + "px";
@@ -227,7 +250,7 @@ export default {
     },
     toPNG() {
       return this.$refs.c.toDataURL("image/png");
-    },
+    }
   },
   mounted() {
     this.ctx = this.$refs.c.getContext("2d");
@@ -237,10 +260,9 @@ export default {
     this.h = this.$refs.c.height;
 
     this.clear();
-  },
-}
+  }
+};
 </script>
 
 <style scoped>
-
 </style>

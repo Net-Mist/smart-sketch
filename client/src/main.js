@@ -2,7 +2,7 @@ import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
 import "./registerServiceWorker";
-import {library} from "@fortawesome/fontawesome-svg-core"
+import { library } from "@fortawesome/fontawesome-svg-core"
 import {
   faPen,
   faEraser,
@@ -11,7 +11,7 @@ import {
   faTrash,
   faFillDrip,
 } from "@fortawesome/free-solid-svg-icons"
-import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome"
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome"
 
 Vue.config.productionTip = false;
 

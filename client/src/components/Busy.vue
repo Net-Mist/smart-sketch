@@ -1,6 +1,10 @@
 <template>
-  <div v-bind:class="{ 'hidden': !work }" class="spinner-border spinner text-primary" style="border-width: 1.5em" role="status">
-  </div>
+  <div
+    v-bind:class="{ 'hidden': !work }"
+    class="spinner-border spinner text-primary"
+    style="border-width: 1.5em"
+    role="status"
+  ></div>
 </template>
 
 <script>
@@ -9,9 +13,9 @@ export default {
   data() {
     return {
       work: false
-    }
-  },
-}
+    };
+  }
+};
 </script>
 
 <style scoped>
